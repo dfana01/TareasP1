@@ -1,6 +1,6 @@
 # Java Calculator
 
-Command line calculator that allows you to perform addition (+), multiplication (*), subtraction (-), division (/), and logical (&), or logical (|) operations between positive integers.
+Command line calculator that allows you to perform addition (+), multiplication (*), subtraction (-), division (/), and logical (and), or logical (or) operations between positive integers.
 
 ## Getting Started
 

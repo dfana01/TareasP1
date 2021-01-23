@@ -50,7 +50,7 @@ public class Main {
             }
             return calculator.equal();
         } catch (Exception e){
-            throw new IllegalArgumentException("Malformat exception please check if your input complies the format \n" +
+            throw new IllegalArgumentException("Malformed exception please check if your input complies the format \n" +
                     "Format: calculator <binary-number> <+ | - | * | / | and | or> <binary-number> [<+ | - | * | / | and | or> <binary-number>] ");
         }
     }
