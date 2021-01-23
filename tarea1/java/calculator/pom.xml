@@ -8,9 +8,25 @@
     <artifactId>calculator</artifactId>
     <version>1.0</version>
 
+    <developers>
+        <developer>
+            <id>1</id>
+            <name>Dante Fana Badia</name>
+            <email>dfana@dfb.com.do</email>
+        </developer>
+    </developers>
+
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 </project>
