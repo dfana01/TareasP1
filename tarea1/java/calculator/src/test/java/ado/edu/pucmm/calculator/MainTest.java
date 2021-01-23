@@ -177,7 +177,7 @@ public class MainTest {
 
         @Test
         public void messageWithArgs() {
-            String mjs = Main.execute(MIN_BINARY_INTEGER, "|", MID_BINARY_INTEGER);
+            String mjs = Main.execute(MIN_BINARY_INTEGER, "or", MID_BINARY_INTEGER);
             assertTrue("Must return default message", mjs.contains("Thanks for using the calculator, result"));
         }
 
@@ -188,7 +188,7 @@ public class MainTest {
 
         @Test
         public void calculateGoodFormatArgs() {
-            String mjs = Main.execute(MIN_BINARY_INTEGER, "&", MID_BINARY_INTEGER);
+            String mjs = Main.execute(MIN_BINARY_INTEGER, "and", MID_BINARY_INTEGER);
             String result = String.valueOf((Math.round(MIN_INTEGER) & Math.round(MID_INTEGER)));
             assertTrue(String.format("Must return result: %s, that contains: %s", mjs, result), mjs.contains(result));
         }
