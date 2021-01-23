@@ -24,10 +24,10 @@ public class Main {
                 "** Logical operator \n" +
                 "Format: calculator <binary-number> <+ | - | * | / | and | or> <binary-number> [<+ | - | * | / | and | or> <binary-number>] \n" +
                 "Author: <Dante Fana Badia>dfana@dfb.com.do" :
-                String.format("Thanks for using the calculator, result: %d", calculate(args));
+                String.format("Thanks for using the calculator, result: %f", calculate(args));
     }
 
-    public static int calculate(String...args){
+    public static float calculate(String...args){
         try{
             Calculator calculator = new Calculator(Integer.parseInt(args[0], 2));
             for (int i = 1; i < args.length; i++) {
@@ -77,55 +77,53 @@ public class Main {
     }
 
     public static class Calculator {
-        private int result;
+        private float result;
 
-        public Calculator(int n){
+        public Calculator(float n){
             result = n;
         }
 
-        public Calculator sum(int n){
+        public Calculator sum(float n){
             result = result + n;
             return this;
         }
 
-        public Calculator multiplication(int n){
+        public Calculator multiplication(float n){
             result = result * n;
             return this;
         }
 
-        public Calculator subtraction(int n){
+        public Calculator subtraction(float n){
             result = result - n;
             return this;
         }
 
-        public Calculator division(int n){
+        public Calculator division(float n){
             result = result / n;
             return this;
         }
 
-        public Calculator and(int n){
-            result = result & n;
+        public Calculator and(float n){
+            result = (float) (Math.round(result) & Math.round(n));
             return this;
         }
 
-        public Calculator or(int n){
-            result = result | n;
+        public Calculator or(float n){
+            result = (float) (Math.round(result) | Math.round(n));
             return this;
         }
 
-        public Calculator init(int n) {
+        public Calculator init(float n) {
             result = n;
             return this;
         }
 
-        public int equal(){
+        public float equal(){
             return result;
         }
 
         public void clear() {
             result = 0;
         }
-
-
     }
 }
