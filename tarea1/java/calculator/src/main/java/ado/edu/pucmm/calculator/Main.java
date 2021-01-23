@@ -1,13 +1,86 @@
 package ado.edu.pucmm.calculator;
 
-import static ado.edu.pucmm.calculator.Calculator.Operator.or;
-import static ado.edu.pucmm.calculator.Calculator.Operator.multiplication;
-import static ado.edu.pucmm.calculator.Calculator.Operator.sum;
-import static ado.edu.pucmm.calculator.Calculator.Operator.division;
-import static ado.edu.pucmm.calculator.Calculator.Operator.subtraction;
-import static ado.edu.pucmm.calculator.Calculator.Operator.and;
+import static ado.edu.pucmm.calculator.Main.Operator.sum;
+import static ado.edu.pucmm.calculator.Main.Operator.multiplication;
+import static ado.edu.pucmm.calculator.Main.Operator.subtraction;
+import static ado.edu.pucmm.calculator.Main.Operator.division;
+import static ado.edu.pucmm.calculator.Main.Operator.and;
+import static ado.edu.pucmm.calculator.Main.Operator.or;
 
 public class Main {
+    enum Operator {
+        sum("+"),
+        multiplication("*"),
+        subtraction("-"),
+        division("/"),
+        and("and"),
+        or("or");
+
+        private final String text;
+
+        Operator(final String text) {
+            this.text = text;
+        }
+
+        @Override
+        public String toString() {
+            return text;
+        }
+    }
+    public static class Calculator {
+        private int result;
+
+        public Calculator(int n){
+            result = n;
+        }
+
+        public Calculator(){
+            result = 0;
+        }
+
+        public Calculator sum(int n){
+            result = result + n;
+            return this;
+        }
+
+        public Calculator multiplication(int n){
+            result = result * n;
+            return this;
+        }
+
+        public Calculator subtraction(int n){
+            result = result - n;
+            return this;
+        }
+
+        public Calculator division(int n){
+            result = result / n;
+            return this;
+        }
+
+        public Calculator and(int n){
+            result = result & n;
+            return this;
+        }
+
+        public Calculator or(int n){
+            result = result | n;
+            return this;
+        }
+
+        public int equal(){
+            return result;
+        }
+
+        public void reset(){
+            result = 0;
+        }
+
+        public void reset(int n){
+            result = n;
+        }
+    }
+
     public static void main(String...args){
         String output = args.length == 0 ? "Welcome to the calculator, with this CLI util you can do: \n" +
                 "- sum (+) \n" +
