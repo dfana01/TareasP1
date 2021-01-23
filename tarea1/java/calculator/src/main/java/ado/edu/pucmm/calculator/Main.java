@@ -19,10 +19,9 @@ public class Main {
                 "- subtraction (-) \n" +
                 "- multiplication (*) \n" +
                 "- division (/) \n" +
-                "- and (**) \n" +
-                "- or (**) \n" +
-                "** Logical operator \n" +
-                "Format: calculator <binary-number> <+ | - | * | / | and | or> <binary-number> [<+ | - | * | / | and | or> <binary-number>] \n" +
+                "- and (&) \n" +
+                "- or (|) \n\n" +
+                "Format: calculator <binary-number> <+ | - | * | / | '|' | &> <binary-number> [<+ | - | * | / | and | or> <binary-number>] \n\n" +
                 "Author: <Dante Fana Badia>dfana@dfb.com.do" :
                 String.format("Thanks for using the calculator, result: %f", calculate(args));
     }
@@ -61,8 +60,8 @@ public class Main {
         multiplication("*"),
         subtraction("-"),
         division("/"),
-        and("and"),
-        or("or");
+        and("&"),
+        or("|");
 
         private final String text;
 
