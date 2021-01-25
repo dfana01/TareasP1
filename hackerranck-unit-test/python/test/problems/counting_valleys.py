@@ -1,5 +1,3 @@
-import os
-
 """
     Autor: <Dante Fana Badia>dfana@dfb.com.do
     Ref: https://www.hackerrank.com/challenges/counting-valleys/problem
