@@ -3,7 +3,7 @@ from psutil import Process
 from matplotlib import pyplot as plt
 from time import time
 from string import ascii_letters
-from random import choice
+from random import choice, randint
 
 
 N_REPETITION = 5
@@ -108,3 +108,7 @@ def get_random_str(size):
                         choice(ascii_letters),
                         choice(ascii_letters)])
     return s[:size]
+
+
+def random_number_between(start=0, end=N_TIMES):
+    return randint(start, end)

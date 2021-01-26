@@ -1,6 +1,5 @@
 from util import with_rep_and_standardize, get_current_ram, \
-    get_current_time, N_TIMES, add_to_sample, \
-    graph_men_and_time, get_random_str
+    get_current_time, N_TIMES, add_to_sample, get_random_str
 
 
 def repeated_character(str):
@@ -23,8 +22,3 @@ def generate_repeated_character():
             sample = add_to_sample(j, delta, men, sample)
         return sample
     return with_rep_and_standardize(f)
-
-
-if __name__ == '__main__':
-    graph_men_and_time(generate_repeated_character(), "Repeated Character")
-
