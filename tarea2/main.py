@@ -37,7 +37,7 @@ def main():
 
     # Repeated character
     print("================Repeated character Sample================")
-    print("Sample for {} generated".format("Repeated Characte"))
+    print("Sample for {} generated".format("Repeated Characters"))
     graph_men_and_time(generate_repeated_character(), "Repeated Character")
 
 

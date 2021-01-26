@@ -26,8 +26,8 @@ def graph_men_and_time(data, title):
         x_axis.append(i)
         y_time_axis.append(tm)
         y_men_axis.append(men)
-    graph(x_axis, y_time_axis, title, "Time", "N")
-    graph(x_axis, y_men_axis, title, "Memory", "N")
+    graph(x_axis, y_time_axis, title, "N", "Time")
+    graph(x_axis, y_men_axis, title, "N", "Memory")
 
 
 def graph(x, y, title, x_label, y_label):

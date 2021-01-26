@@ -57,10 +57,10 @@ def generate_sample_remove():
 def generate_sample_in():
     def f(sample):
         for j in range(N_TIMES):
-            list_sample = [i for i in range(j)]
+            set_sample = [i for i in range(j)]
             index = random_number_between(end=j)
             init = get_current_time()
-            index in list_sample
+            index in set_sample
             men, delta = get_current_ram(), get_current_time() - init
             sample = add_to_sample(j, delta, men, sample)
         return sample

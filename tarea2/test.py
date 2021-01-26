@@ -60,9 +60,6 @@ class RepeatedCharacterTestFact(unittest.TestCase):
 
 
 class MiscellaneousTestFact(unittest.TestCase):
-    def test_main(self):
-        self.main
-
     def test_graph_men_and_time(self):
         self.assertTrue(True)
 
