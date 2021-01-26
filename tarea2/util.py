@@ -22,7 +22,6 @@ def graph_men_and_time(data, title):
         }
     """
     x_axis, y_men_axis, y_time_axis = [], [], []
-    print(data)
     for i, men, tm, z_men, x_time in data:
         x_axis.append(i)
         y_time_axis.append(tm)

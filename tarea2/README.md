@@ -12,11 +12,13 @@
 * python3
 
 ### Installing
-TBD
+```
+pip install -r requirements.txt
+```
 ### Executing program
-TBD
-## Help
-TBD
+```
+python3 main.py
+```
 ## Authors
 
 - <Dante Fana Badia>dfana@dfb.com.do
