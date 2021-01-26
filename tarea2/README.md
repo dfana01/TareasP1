@@ -2,11 +2,14 @@
 
 ## Getting Started
 
+### Documentation
+
+- https://cepucmmedu-my.sharepoint.com/:w:/g/personal/20156079_ce_pucmm_edu_do/EXTFlCSNsLdHrV8Fc9X2syEBw6SWXOMGatu3wnWotk-sWg?e=VNxSMv
+
 ### Dependencies
 
 * pip3
 * python3
-* Unix base system (MacOS, Ubuntu, etc)
 
 ### Installing
 TBD

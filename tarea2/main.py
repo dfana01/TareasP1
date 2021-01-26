@@ -1,6 +1,6 @@
 
 def main():
-    print(f'Hello world')
+    pass
 
 
 if __name__ == '__main__':
