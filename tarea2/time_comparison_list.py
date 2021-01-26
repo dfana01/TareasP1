@@ -9,8 +9,7 @@ def generate_sample_append():
         for j in range(N_TIMES):
             init = get_current_time()
             sample_list.append(j)
-            delta = get_current_time() - init
-            men = get_current_ram()
+            men, delta = get_current_ram(), get_current_time() - init
             sample = add_to_sample(j, delta, men, sample)
         return sample
     return with_rep_and_standardize(f)
