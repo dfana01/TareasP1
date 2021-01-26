@@ -16,7 +16,15 @@ def generate_sample_append():
 
 
 def generate_sample_clear():
-    pass
+    def f(sample):
+        sample_list = []
+        for j in range(N_TIMES):
+            init = get_current_time()
+            sample_list.append(j)
+            men, delta = get_current_ram(), get_current_time() - init
+            sample = add_to_sample(j, delta, men, sample)
+        return sample
+    return with_rep_and_standardize(f)
 
 
 def generate_sample_copy():

@@ -1,3 +1,6 @@
+from util import with_rep_and_standardize, get_current_ram, \
+    get_current_time, N_TIMES, add_to_sample, \
+    graph_men_and_time, get_random_str
 
 
 def repeated_character(str):
@@ -10,6 +13,18 @@ def repeated_character(str):
     return chars_dic
 
 
+def generate_repeated_character():
+    def f(sample):
+        for j in range(N_TIMES):
+            s = get_random_str(j)
+            init = get_current_time()
+            repeated_character(s)
+            men, delta = get_current_ram(), get_current_time() - init
+            sample = add_to_sample(j, delta, men, sample)
+        return sample
+    return with_rep_and_standardize(f)
+
+
 if __name__ == '__main__':
-    print(repeated_character(input()))
+    graph_men_and_time(generate_repeated_character(), "Repeated Character")
 

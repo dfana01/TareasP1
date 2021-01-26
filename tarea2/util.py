@@ -2,6 +2,9 @@ from os import getpid
 from psutil import Process
 from matplotlib import pyplot as plt
 from time import time
+from string import ascii_letters
+from random import choice
+
 
 N_REPETITION = 5
 N_TIMES = 1000
@@ -97,3 +100,11 @@ def add_to_sample(n, delta, men, sample):
     else:
         sample[n] = [[men], [delta]]
     return sample
+
+
+def get_random_str(size):
+    s = size * "".join([choice(ascii_letters),
+                        choice(ascii_letters),
+                        choice(ascii_letters),
+                        choice(ascii_letters)])
+    return s[:size]
