@@ -15,11 +15,23 @@ class TimeComparisonSet(unittest.TestCase):
     def test_generate_sample_copy(self):
         self.assertTrue(tcs.generate_sample_copy() is not None)
 
-    def test_generate_sample_remove(self):
-        self.assertTrue(tcs.generate_sample_remove() is not None)
+    def test_generate_sample_remove_start(self):
+        self.assertTrue(tcs.generate_sample_remove_start() is not None)
 
-    def test_generate_sample_in(self):
-        self.assertTrue(tcs.generate_sample_in() is not None)
+    def test_generate_sample_remove_middle(self):
+        self.assertTrue(tcs.generate_sample_remove_middle() is not None)
+
+    def test_generate_sample_remove_end(self):
+        self.assertTrue(tcs.generate_sample_remove_end() is not None)
+
+    def test_generate_sample_in_start(self):
+        self.assertTrue(tcs.generate_sample_in_start() is not None)
+
+    def test_generate_sample_in_middle(self):
+        self.assertTrue(tcs.generate_sample_in_middle() is not None)
+
+    def test_generate_sample_in_end(self):
+        self.assertTrue(tcs.generate_sample_in_end() is not None)
 
 
 class TimeComparisonList(unittest.TestCase):
@@ -35,17 +47,35 @@ class TimeComparisonList(unittest.TestCase):
     def test_generate_sample_index(self):
         self.assertTrue(tcl.generate_sample_index() is not None)
 
-    def test_generate_sample_insert(self):
-        self.assertTrue(tcl.generate_sample_insert() is not None)
+    def test_generate_sample_insert_start(self):
+        self.assertTrue(tcl.generate_sample_insert_start() is not None)
 
-    def test_generate_sample_remove(self):
-        self.assertTrue(tcl.generate_sample_remove() is not None)
+    def test_generate_sample_remove_middle(self):
+        self.assertTrue(tcl.generate_sample_remove_middle() is not None)
+
+    def test_generate_sample_insert_end(self):
+        self.assertTrue(tcl.generate_sample_insert_end() is not None)
+
+    def test_generate_sample_remove_start(self):
+        self.assertTrue(tcl.generate_sample_remove_start() is not None)
+
+    def test_generate_sample_insert_middle(self):
+        self.assertTrue(tcl.generate_sample_insert_middle() is not None)
+
+    def test_generate_sample_remove_end(self):
+        self.assertTrue(tcl.generate_sample_remove_end() is not None)
 
     def test_generate_sample_sort(self):
         self.assertTrue(tcl.generate_sample_sort() is not None)
 
-    def test_generate_sample_in(self):
-        self.assertTrue(tcl.generate_sample_in() is not None)
+    def test_generate_sample_in_start(self):
+        self.assertTrue(tcl.generate_sample_in_start() is not None)
+
+    def test_generate_sample_in_middle(self):
+        self.assertTrue(tcl.generate_sample_in_middle() is not None)
+
+    def test_generate_sample_in_end(self):
+        self.assertTrue(tcl.generate_sample_in_end() is not None)
 
 
 class RepeatedCharacterTestFact(unittest.TestCase):

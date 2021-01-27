@@ -50,25 +50,82 @@ def generate_sample_index():
     return with_rep_and_standardize(f)
 
 
-def generate_sample_insert():
+def generate_sample_insert_start():
     def f(sample):
-        for j in range(N_TIMES):
+        for j in range(1, N_TIMES):
             list_sample = [i for i in range(j)]
-            index = random_number_between(end=j)
+            index = 0
+            n = random_number_between()
             init = get_current_time()
-            list_sample.insert(index, index)
+            list_sample.insert(index, n)
             men, delta = get_current_ram(), get_current_time() - init
             sample = add_to_sample(j, delta, men, sample)
         return sample
     return with_rep_and_standardize(f)
 
 
-def generate_sample_remove():
+def generate_sample_insert_middle():
+    def f(sample):
+        for j in range(1, N_TIMES):
+            list_sample = [i for i in range(j)]
+            index = int((len(list_sample) - 1) / 2)
+            n = random_number_between()
+            init = get_current_time()
+            list_sample.insert(index, n)
+            men, delta = get_current_ram(), get_current_time() - init
+            sample = add_to_sample(j, delta, men, sample)
+        return sample
+    return with_rep_and_standardize(f)
+
+
+def generate_sample_insert_end():
+    def f(sample):
+        for j in range(1, N_TIMES):
+            list_sample = [i for i in range(j)]
+            index = j - 1
+            n = random_number_between()
+            init = get_current_time()
+            list_sample.insert(index, n)
+            men, delta = get_current_ram(), get_current_time() - init
+            sample = add_to_sample(j, delta, men, sample)
+        return sample
+    return with_rep_and_standardize(f)
+
+
+def generate_sample_remove_start():
     def f(sample):
         for j in range(1, N_TIMES):
             list_sample = [i for i in range(j)]
             init = get_current_time()
             list_sample.remove(0)
+            men, delta = get_current_ram(), get_current_time() - init
+            sample = add_to_sample(j, delta, men, sample)
+        return sample
+
+    return with_rep_and_standardize(f)
+
+
+def generate_sample_remove_middle():
+    def f(sample):
+        for j in range(1, N_TIMES):
+            list_sample = [i for i in range(j)]
+            index = int((len(list_sample) - 1) / 2)
+            init = get_current_time()
+            list_sample.remove(index)
+            men, delta = get_current_ram(), get_current_time() - init
+            sample = add_to_sample(j, delta, men, sample)
+        return sample
+
+    return with_rep_and_standardize(f)
+
+
+def generate_sample_remove_end():
+    def f(sample):
+        for j in range(1, N_TIMES):
+            list_sample = [i for i in range(j)]
+            index = j - 1
+            init = get_current_time()
+            list_sample.remove(index)
             men, delta = get_current_ram(), get_current_time() - init
             sample = add_to_sample(j, delta, men, sample)
         return sample
@@ -89,15 +146,43 @@ def generate_sample_sort():
     return with_rep_and_standardize(f)
 
 
-def generate_sample_in():
+def generate_sample_in_start():
     def f(sample):
-        for j in range(N_TIMES):
+        for j in range(1, N_TIMES):
             list_sample = [i for i in range(j)]
-            index = random_number_between(end=j)
+            el = list_sample[0]
             init = get_current_time()
-            index in list_sample
+            el in list_sample
             men, delta = get_current_ram(), get_current_time() - init
             sample = add_to_sample(j, delta, men, sample)
         return sample
 
     return with_rep_and_standardize(f)
+
+
+def generate_sample_in_middle():
+    def f(sample):
+        for j in range(1, N_TIMES):
+            list_sample = [i for i in range(j)]
+            el = list_sample[int((len(list_sample) - 1) / 2)]
+            init = get_current_time()
+            el in list_sample
+            men, delta = get_current_ram(), get_current_time() - init
+            sample = add_to_sample(j, delta, men, sample)
+        return sample
+
+    return with_rep_and_standardize(f)
+
+
+def generate_sample_in_end():
+    def f(sample):
+        for j in range(1, N_TIMES):
+            list_sample = [i for i in range(j)]
+            el = list_sample[j-1]
+            init = get_current_time()
+            el in list_sample
+            men, delta = get_current_ram(), get_current_time() - init
+            sample = add_to_sample(j, delta, men, sample)
+        return sample
+    return with_rep_and_standardize(f)
+

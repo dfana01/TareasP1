@@ -16,18 +16,18 @@ def graph_men_and_time(data, title):
     :param data
         {
             "data": [
-                (i, men, tm, z_men, x_time)
+                (i, men, tm, x_time)
             ],
             "title": "Label"
         }
     """
     x_axis, y_men_axis, y_time_axis = [], [], []
-    for i, men, tm, z_men, x_time in data:
+    for i, men, tm, x_time in data:
         x_axis.append(i)
         y_time_axis.append(tm)
         y_men_axis.append(men)
-    graph(x_axis, y_time_axis, title, "N", "Time")
-    graph(x_axis, y_men_axis, title, "N", "Memory")
+    graph(x_axis, y_time_axis, title, "N", "Time (s)")
+    graph(x_axis, y_men_axis, title, "N", "Memory (kb)")
 
 
 def graph(x, y, title, x_label, y_label):
@@ -76,12 +76,11 @@ def standardize_sample(dic_sample):
         tm_values = values[1]
 
         avg_men = get_avg(men_values)
-        dev_men = get_deviation(avg_men, men_values)
 
         avg_time = get_avg(tm_values)
         dev_time = get_deviation(avg_time, tm_values)
 
-        sample.append((key, avg_men, avg_time, dev_men, dev_time))
+        sample.append((key, avg_men, avg_time, dev_time))
     return sample
 
 
