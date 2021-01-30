@@ -29,6 +29,7 @@ def main():
 
     # Set
     set_samples = [
+        {"func": time_comparison_set.generate_sample_add, "title": "Set add"}
         {"func": time_comparison_set.generate_sample_clear, "title": "Set clear"},
         {"func": time_comparison_set.generate_sample_copy, "title": "Set copy"},
         {"func": time_comparison_set.generate_sample_remove_start, "title": "Set remove start"},
@@ -36,8 +37,7 @@ def main():
         {"func": time_comparison_set.generate_sample_remove_end, "title": "Set remove end"},
         {"func": time_comparison_set.generate_sample_in_start, "title": "Set in start"},
         {"func": time_comparison_set.generate_sample_in_middle, "title": "Set in middle"},
-        {"func": time_comparison_set.generate_sample_in_end, "title": "Set in end"},
-        {"func": time_comparison_set.generate_sample_add, "title": "Set add"}
+        {"func": time_comparison_set.generate_sample_in_end, "title": "Set in end"}
     ]
 
     print("================Set Sample================")

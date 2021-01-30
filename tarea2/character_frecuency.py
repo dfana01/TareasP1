@@ -1,5 +1,5 @@
 from util import with_rep_and_standardize, get_current_ram, \
-    get_current_time, N_TIMES, add_to_sample, get_random_str
+    get_current_time, N_TIMES, add_to_sample, get_random_str, N_STEP
 
 
 def repeated_character(str):
@@ -14,7 +14,7 @@ def repeated_character(str):
 
 def generate_repeated_character():
     def f(sample):
-        for j in range(N_TIMES):
+        for j in range(0, N_TIMES, N_STEP):
             s = get_random_str(j)
             init = get_current_time()
             repeated_character(s)
