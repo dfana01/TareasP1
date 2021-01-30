@@ -4,10 +4,11 @@ from matplotlib import pyplot as plt
 from time import time
 from string import ascii_letters
 from random import choice, randint
-
+from terminaltables import AsciiTable
 
 N_REPETITION = 5
-N_TIMES = 1000
+N_TIMES = 10000009
+N_STEP = 1000000
 
 
 def graph_men_and_time(data, title):
@@ -85,10 +86,13 @@ def standardize_sample(dic_sample):
 
 
 def with_rep_and_standardize(func, rep=N_REPETITION):
+    columns = [('N (unidad)', 'Memoria Actual (KB)', 'Tiempo promedio(s)', 'Varianza Tiempo')]
     sample = {}
     for _ in range(rep):
         func(sample)
-    return standardize_sample(sample)
+    data = standardize_sample(sample)
+    print(AsciiTable(columns + data).table)
+    return data
 
 
 def add_to_sample(n, delta, men, sample):
