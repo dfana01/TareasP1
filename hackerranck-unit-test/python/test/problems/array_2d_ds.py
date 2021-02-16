@@ -4,7 +4,7 @@
 """
 
 
-def hourglassSum(arr):
+def hour_glass_sum(arr):
     n = len(arr)
     r = -99999
     for i in range(0, n - 1):
@@ -15,12 +15,3 @@ def hourglassSum(arr):
                 )
                 r = r if r > aux_sum else aux_sum
     return r
-
-
-if __name__ == '__main__':
-    arr = []
-    for _ in range(6):
-        arr.append(list(map(int, input().rstrip().split())))
-    result = hourglassSum(arr)
-    print(result)
-

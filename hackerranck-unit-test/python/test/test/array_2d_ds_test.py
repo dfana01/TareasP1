@@ -12,7 +12,7 @@ class TestHourglassSumTestFact(unittest.TestCase):
             [0, 0, 0, 2, 0, 0],
             [0, 0, 1, 2, 4, 0]
         ]
-        self.assertTrue(array_2d_ds.hourglassSum(arr) == 19)
+        self.assertTrue(array_2d_ds.hour_glass_sum(arr) == 19)
 
     def test_case_2(self):
         arr = [
@@ -23,7 +23,7 @@ class TestHourglassSumTestFact(unittest.TestCase):
             [0, 0, 0, -2, 0, 0],
             [0, 0, -1, -2, -4, 0]
         ]
-        self.assertTrue(array_2d_ds.hourglassSum(arr) == 13)
+        self.assertTrue(array_2d_ds.hour_glass_sum(arr) == 13)
 
     def test_case_3(self):
         arr = [
@@ -34,7 +34,7 @@ class TestHourglassSumTestFact(unittest.TestCase):
             [0, 0, 0, -2, 0, 0],
             [0, 0, 1, 2, 4, 0]
         ]
-        self.assertTrue(array_2d_ds.hourglassSum(arr) == 28)
+        self.assertTrue(array_2d_ds.hour_glass_sum(arr) == 28)
 
 
 if __name__ == '__main__':
