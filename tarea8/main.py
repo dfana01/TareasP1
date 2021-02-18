@@ -15,6 +15,11 @@ class Student:
 
 
 def binary_search(students, min_idx, max_idx, student):
+    """
+    :complexity
+        - Time: la complejidad de tiempo
+        - Space
+    """
     if min_idx <= max_idx:
         mid_idx = (min_idx + max_idx) // 2
         if students[mid_idx] == student:
