@@ -17,8 +17,11 @@ class Student:
 def binary_search(students, min_idx, max_idx, student):
     """
     :complexity
-        - Time: la complejidad de tiempo
-        - Space
+        - Time: O(log n), este algoritmos es de esta complejidad dada que nunca se recorre el arreglo completo este
+            sobre entiende que el mismo esta organizado y divide entre dos la cantidad de posiciones que recorrerá
+            cada vez que se llama a la función.
+        - Space: O(1), Como solo usamos una variable extra y no prestamos atención a los recursos consumido por la
+            llamada recursivas decimos que el costo de espacio es constante.
     """
     if min_idx <= max_idx:
         mid_idx = (min_idx + max_idx) // 2
