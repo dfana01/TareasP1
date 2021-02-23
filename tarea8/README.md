@@ -42,7 +42,7 @@ t(n) = t(n/2) + O(1)
 base case => t(n/2^i)
 1 = n/2^i => log2(n) = i
 
-Σ[i=0...log2(n)] 1 = log2(n) + 1 
+Σ[i=0...log2(n)] i = log2(n) + 1 
 ```
 
 
