@@ -61,10 +61,10 @@ class HeapMax:
         left = self.left(i)
         right = self.right(i)
 
-        if left < self.size and self.elements[left] > self.elements[largest]:
+        if left <= self.size and self.elements[left] > self.elements[largest]:
             largest = left
-
-        if right < self.size and self.elements[right] > self.elements[largest]:
+        
+        if right <= self.size and self.elements[right] > self.elements[largest]:
             largest = right
 
         if largest != i:
