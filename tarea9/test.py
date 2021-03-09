@@ -44,7 +44,7 @@ STUDENTS_ORDERS_MAX = [
 ]
 
 
-class SearchTest(unittest.TestCase):
+class HeapTest(unittest.TestCase):
     def test_heap_max_insert(self):
         heap = HeapMax()
         heap.insert(Student("Aamina", 4.0, 19))
