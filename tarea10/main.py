@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 from time import time
 
+
 class Mail:
     epoch = 0
 
