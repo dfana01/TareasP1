@@ -1,44 +1,92 @@
 import unittest
-from main import HeapMax, heap_sort
+from main import HeapMax, HeapMin, heap_sort, Student
 
+STUDENTS = [
+    Student("Aamina", 4.0, 19),
+    Student("Ayyub", 3.7, 17),
+    Student("Eben", 2.3, 21),
+    Student("Elis", 3.2, 28),
+    Student("Zeta", 1.4, 29),
+    Student("Hashim", 3.6, 23),
+    Student("Roshni", 2.1, 36),
+    Student("Simona", 3.4, 33),
+    Student("Tanisha", 1.6, 23),
+    Student("Taslima", 3.1, 18),
+    Student("Ty", 3.0, 20)
+]
 
-# STUDENT = [
-#     Student("Aamina"),
-#     Student("Ayyub"),
-#     Student("Eben"),
-#     Student("Elis"),
-#     Student("Hashim"),
-#     Student("Roshni"),
-#     Student("Simona"),
-#     Student("Tanisha"),
-#     Student("Taslima"),
-#     Student("Ty"),
-# ]
+STUDENTS_ORDERS_MIN = [
+    Student("Aamina", 4.0, 19),
+    Student("Simona", 3.4, 33),
+    Student("Tanisha",  1.6, 23),
+    Student("Zeta",  1.4, 29),
+    Student("Hashim", 3.6, 23),
+    Student("Roshni", 2.1, 36),
+    Student("Elis", 3.2, 28),
+    Student("Eben", 2.3, 21),
+    Student("Taslima", 3.1, 18),
+    Student("Ty", 3.0, 20),
+    Student("Ayyub", 3.7, 17)
+]
+
+STUDENTS_ORDERS_MAX = [
+    Student("Ayyub", 3.7, 17),
+    Student("Ty", 3.0, 20),
+    Student("Simona", 3.4, 33),
+    Student("Zeta", 1.4, 29),
+    Student("Eben", 2.3, 21),
+    Student("Roshni", 2.1, 36),
+    Student("Elis", 3.2, 28),
+    Student("Tanisha", 1.6, 23),
+    Student("Taslima", 3.1, 18),
+    Student("Hashim", 3.6, 23),
+    Student("Aamina", 4.0, 19),
+]
 
 
 class SearchTest(unittest.TestCase):
-    def test_heap_insert(self):
-        # 16 14 10 8 7 9 3 2 4 1
+    def test_heap_max_insert(self):
         heap = HeapMax()
-        heap.insert(8)
-        heap.insert(9)
-        heap.insert(1)
-        heap.insert(14)
-        heap.insert(7)
-        heap.insert(16)
-        heap.insert(10)
-        heap.insert(2)
-        heap.insert(4)
-        heap.insert(3)
-        print(heap)
-        self.assertEqual(1, 1)
+        heap.insert(Student("Aamina", 4.0, 19))
+        heap.insert(Student("Ayyub", 3.7, 17))
+        heap.insert(Student("Eben", 2.3, 21))
+        heap.insert(Student("Elis", 3.2, 28))
+        heap.insert(Student("Zeta", 1.4, 29))
+        heap.insert(Student("Hashim", 3.6, 23))
+        heap.insert(Student("Roshni", 2.1, 36))
+        heap.insert(Student("Simona", 3.4, 33))
+        heap.insert(Student("Tanisha", 1.6, 23))
+        heap.insert(Student("Taslima", 3.1, 18))
+        heap.insert(Student("Ty", 3.0, 20))
+        self.assertEqual(heap.extract_max(), Student("Aamina", 4.0, 19))
 
-    def test_build(self):
-        # 16 14 10 8 7 9 3 2 4 1
-        heap_sort([
-            12, 11, 13, 5, 6, 7
-        ])
-        self.assertEqual(1, 1)
+    def test_heap_min_insert(self):
+        heap = HeapMin()
+        heap.insert(Student("Aamina", 4.0, 19))
+        heap.insert(Student("Ayyub", 3.7, 17))
+        heap.insert(Student("Eben", 2.3, 21))
+        heap.insert(Student("Elis", 3.2, 28))
+        heap.insert(Student("Zeta", 1.4, 29))
+        heap.insert(Student("Hashim", 3.6, 23))
+        heap.insert(Student("Roshni", 2.1, 36))
+        heap.insert(Student("Simona", 3.4, 33))
+        heap.insert(Student("Tanisha", 1.6, 23))
+        heap.insert(Student("Taslima", 3.1, 18))
+        heap.insert(Student("Ty", 3.0, 20))
+        self.assertEqual(heap.extract_min(), Student("Ayyub", 3.7, 17))
+
+    def test_heap_build(self):
+        heap = HeapMax()
+        heap.build([17, 2, 1, 7, 3, 19, 36, 25, 100])
+        self.assertEqual(heap.extract_max(), 100)
+
+    def test_heapsort_max(self):
+        r = heap_sort(HeapMax, STUDENTS.copy())
+        self.assertEqual(r, STUDENTS_ORDERS_MAX)
+
+    def test_heapsort_min(self):
+        r = heap_sort(HeapMin, STUDENTS.copy())
+        self.assertEqual(r, STUDENTS_ORDERS_MIN)
 
 
 if __name__ == '__main__':
