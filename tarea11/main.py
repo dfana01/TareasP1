@@ -60,8 +60,8 @@ class DirectAddressTable:
         """
         if not val.isalpha():
             raise Exception("The key needs to compose all by letters")
-        if len(val) > 5:
-            raise Exception("Key is bigger than 5")
+        if len(val) != 5:
+            raise Exception("Key need to be 5 letter")
 
         element = Element(val)
         key = hash(element)

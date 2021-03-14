@@ -27,7 +27,7 @@ class DirectAccessTableTest(unittest.TestCase):
         try:
             dat.insert("ardgwa")
         except Exception as err:
-            self.assertTrue('Key is bigger than 5' in str(err))
+            self.assertTrue('Key need to be 5 letter' in str(err))
 
     def test_only_letter_key(self):
         dat = DirectAddressTable()
