@@ -1,5 +1,5 @@
 import unittest
-from main import RBTree, Node, RED
+from main import RBTree, Node, RED, BLACK
 
 
 class RBTreeTest(unittest.TestCase):
@@ -8,7 +8,7 @@ class RBTreeTest(unittest.TestCase):
         node1 = Node(data=1, left=rb_tree.nil, right=rb_tree.nil, color=RED)
         node34 = Node(data=34, left=rb_tree.nil, right=rb_tree.nil, color=RED)
         node64 = Node(data=64, left=rb_tree.nil, right=rb_tree.nil, color=RED)
-        node12 = Node(data=12, left=rb_tree.nil, right=rb_tree.nil, color=RED)
+        node12 = Node(data=12, left=rb_tree.nil, right=rb_tree.nil, color=BLACK)
         node49 = Node(data=49, left=rb_tree.nil, right=rb_tree.nil, color=RED)
         node29 = Node(data=29, left=rb_tree.nil, right=rb_tree.nil, color=RED)
         node68 = Node(data=68, left=rb_tree.nil, right=rb_tree.nil, color=RED)
@@ -21,7 +21,7 @@ class RBTreeTest(unittest.TestCase):
         rb_tree.insert(node29)
         rb_tree.insert(node68)
 
-        self.assertEqual(rb_tree.delete(node12), (0, 1))
+        self.assertEqual(rb_tree.delete(node12), (0, 0))
 
     def test_insert(self):
         rb_tree = RBTree()
