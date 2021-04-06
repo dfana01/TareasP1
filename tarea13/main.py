@@ -1,32 +1,71 @@
-"""
-Tarea 13
-• Crear un programa que dada una expresión aritmética como entrada, pueda retornar la representación en notación
-polaca (Polish Notation), notación polaca inversa (Reverse Polish Notation) ó notación de infijo.
-• Se pueden usar paréntesis y/o corchetes para determinar el orden de las operaciones aritméticas.
-• Las operaciones aritméticas permitidas son */+-
-• Incluir unit test
-• Utilizar árboles y sus recorridos
-"""
+
+OPERATORS = {'+', '-', '*', '/', '(', ')'}
+PRIORITY = {'+': 1, '-': 1, '*': 2, '/': 2}
 
 
-def is_operator(s):
-    if s in ["*", "/", "+", "-"]:
-        return True
-    else:
-        return False
+class TTree:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
 
 
-def is_number(s):
-    return False
-
-
-def tokenize(s):
-    operands = []
+def infix_to_postfix(exp):
     stack = []
-    for i in s:
-        print(i)
+    output = []
+    for ch in exp:
+        if ch not in OPERATORS:
+            output.append(ch)
+        elif ch == '(':
+            stack.append('(')
+        elif ch == ')':
+            while stack and stack[-1] != '(':
+                output.append(stack.pop())
+            stack.pop()
+        else:
+            while stack and \
+                    stack[-1] != '(' \
+                    and PRIORITY[ch] <= PRIORITY[stack[-1]]:
+                output.append(stack.pop())
+            stack.append(ch)
+    while stack:
+        output.append(stack.pop())
+    return output
 
 
-def main():
-    print(tokenize("(3 + 4)"))
-    print(tokenize("6 * (3 + 4)"))
+def generate_tree(postfix):
+    stack = []
+    for char in postfix:
+        if char not in OPERATORS:
+            t = TTree(char)
+            stack.append(t)
+        else:
+            t = TTree(char)
+            t1 = stack.pop()
+            t2 = stack.pop()
+            t.right = t1
+            t.left = t2
+            stack.append(t)
+    t = stack.pop()
+    return t
+
+
+def inorder(t):
+    output = ""
+    if t is not None:
+        output += inorder(t.left) + t.value + inorder(t.right)
+    return output
+
+
+def postorder(root):
+    output = ""
+    if root:
+        output += postorder(root.left) + postorder(root.right) + root.value
+    return output
+
+
+def preorder(root):
+    output = ""
+    if root:
+        output += root.value + preorder(root.left) + preorder(root.right)
+    return output
