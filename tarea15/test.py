@@ -14,7 +14,7 @@ class TestGraph(unittest.TestCase):
         g.add_edge(4, 3, 2)
         self.assertEqual(g.kruskal_spanning_tree(), [[0, 1, 1], [4, 3, 2], [1, 4, 3], [1, 2, 5]])
 
-    def test_kruskal_1(self):
+    def test_kruskal_2(self):
         g = Graph()
         g.add_edge(0, 1, 1)
         g.add_edge(0, 2, 4)
